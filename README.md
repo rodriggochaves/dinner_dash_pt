@@ -8,5 +8,5 @@ feature_\<número de feature\>
 
 Exemplo:
 
-#42 Unauthenticated User browse all items
+\#42 Unauthenticated User browse all items
 branch: **feature_42**

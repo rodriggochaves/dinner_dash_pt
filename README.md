@@ -4,7 +4,7 @@
 
 O Padrão é usar o número da história no taiga: 
 
-feature_<número de feature>
+feature_\<número de feature\>
 
 Exemplo:
 

@@ -3,4 +3,6 @@
 // child selectors or sibling selectors. Essentially, a base style says that 
 // wherever this element is on the page, it should look like this.
 
-@import 'normalize'
+@import 'normalize';
+@import "bootstrap-sprockets";
+@import "bootstrap";

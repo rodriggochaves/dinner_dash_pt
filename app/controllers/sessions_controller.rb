@@ -1,4 +1,4 @@
 class SessionsController < ApplicationController
-  def dummy
+  def my_cart 
   end
 end

@@ -5,10 +5,4 @@ class StaticPagesControllerTest < ActionController::TestCase
     get :home
     assert_response :success
   end
-
-  test "should get my_cart" do
-    get :my_cart
-    assert_response :success
-  end
-
 end

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def persist_session_cart
+    #Dummy hash representing cart
     session[:my_cart] ||= Hash.new(0)
   end
 end

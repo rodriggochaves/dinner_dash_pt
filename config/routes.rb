@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'carts/show'
+
   root  'static_pages#home'
 
   get 'my_cart'               =>  'sessions#my_cart'

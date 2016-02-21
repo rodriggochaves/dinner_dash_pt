@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'carts/show'
+  get 'my_cart'               =>  'carts#show'
 
   root  'static_pages#home'
-
-  get 'my_cart'               =>  'sessions#my_cart'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

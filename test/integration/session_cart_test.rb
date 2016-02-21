@@ -6,4 +6,9 @@ class SessionCartTest < ActionDispatch::IntegrationTest
     get root_path
     assert session_cart_exists
   end
+
+  test "my_cart link" do
+    get my_cart_path
+    assert_template 'sessions/my_cart'
+  end
 end

@@ -2,6 +2,10 @@ require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @user = User.new( name: "Test User", email: "user@test.com", 
+                       password: "foobar", display_name: "" )
+  end
   test "should be valid" do
     assert @user.valid?
   end
@@ -39,11 +43,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     duplicate_user.email = @user.email.upcase
     @user.save
     assert_not duplicate_user.valid?
-  end
-
-  test "password should be present (nonblank)" do
-    @user.password = @user.password_confirmation = " " * 6
-    assert_not @user.valid?
   end
 
 end

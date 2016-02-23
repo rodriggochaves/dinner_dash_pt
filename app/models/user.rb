@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
 
   validates :display_name, length: { minimum: 2, maximum: 32 }, 
             allow_nil: true, allow_blank: true
+
+  has_secure_password
 end

@@ -3,7 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new( name: "Test User", email: "user@test.com", 
+    @user = User.new( name: "Test User", email: "user@example.com", 
                        password: "foobar", display_name: "" )
   end
 
@@ -46,4 +46,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?
   end 
 
+  test "not blank display_name should have length between 2 and 32" do
+    @user.display_name = "a"
+    assert_not @user.valid?
+    @user.display_name = "display name"
+    assert @user.valid?
+    @user.display_name = "a" * 33
+    assert_not @user.valid?
+  end
 end

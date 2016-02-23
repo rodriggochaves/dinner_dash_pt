@@ -1,0 +1,22 @@
+<div class = "panel panel-primary col-md-8 col-md-offset-2">
+<div class="panel-heading">
+  <h3 class = "panel-title center">Login</h3>
+</div>  
+
+<div class = "panel-body">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
+</div>

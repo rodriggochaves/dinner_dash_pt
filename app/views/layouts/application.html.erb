@@ -9,10 +9,17 @@
     <title>Dinner Dash</title>
   </head>
   <body>
+
+    <%= render "layouts/sidemenu" %>
+
     <%= render "layouts/header" %>
     <div class="container">
       <%= render "shared/flash_messages" %>
-      <%= yield %>
+      <div class="row">
+        <div class="col-sm-9">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
   <%= debug(params) if Rails.env.development? %>

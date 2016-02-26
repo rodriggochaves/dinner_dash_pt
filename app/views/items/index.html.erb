@@ -1,0 +1,18 @@
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Add to cart</th>
+    </tr>
+</thead>
+<tbody>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.price %></td>
+      <td><%=button_to "Add", add_item_path, params: { item_id: item.id } %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

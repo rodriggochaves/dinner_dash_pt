@@ -40,6 +40,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 # Use slim for reduce the syntax to the essential parts.
 gem 'slim', '~> 3.0', '>= 3.0.6'
+gem 'faker', '~> 1.6', '>= 1.6.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

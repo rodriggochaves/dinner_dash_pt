@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def current_order
-    session[:order].default = 0
     session[:order] ||= Hash.new(0)
+    session[:order].default = 0
+    return session[:order]
   end
 end

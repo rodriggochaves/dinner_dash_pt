@@ -14,7 +14,7 @@
         <th>Item</th>
         <th>Price</th>
         <th>Quantity</th>
-          <%= @my_cart.each do |item| %>
+          <% @my_cart.each do |item| %>
             <tr>
               <td><%= item.name %></td>
               <td><%= item.price %></td>

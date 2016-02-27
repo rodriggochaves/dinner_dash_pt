@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   def show
-    @my_cart = get_items_from_order current_order()
+    @my_cart = get_items_from_order(current_order())
   end
 
   private

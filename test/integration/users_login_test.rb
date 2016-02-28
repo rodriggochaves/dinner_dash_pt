@@ -23,5 +23,10 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_redirected_to @user 
     follow_redirect!
     assert_template 'users/show'
+    #Test display name
+    assert_select 'h1', text: @user.name
+    @user.update_attribute(:display_name, 'Rach')
+    get user_path
+    assert_select 'h1', text: 'Rach'
   end
 end

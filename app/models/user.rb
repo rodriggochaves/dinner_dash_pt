@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :orders
 
   before_save { self.email = email.downcase }
   validates :name, presence: true
@@ -11,6 +12,7 @@ class User < ActiveRecord::Base
             allow_nil: true, allow_blank: true
 
   has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

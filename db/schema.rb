@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20160302204548) do
   end
 
   create_table "category_items", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "item_id"
+    t.integer  "category_id"
   end
 
   create_table "items", force: :cascade do |t|

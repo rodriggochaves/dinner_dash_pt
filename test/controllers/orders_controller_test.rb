@@ -1,9 +1,10 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionController::TestCase
-  test "should get add" do
-    get :add
-    assert_response :success
-  end
+  # Not applicable by now
+  # test "should get add" do
+  #   get :add
+  #   assert_response :success
+  # end
 
 end

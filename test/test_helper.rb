@@ -7,10 +7,6 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  def session_cart_exists
-    !session[:my_cart].nil?
-  end
-
   def is_logged_in?
     !session[:user_id].nil?
   end

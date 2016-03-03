@@ -1,0 +1,18 @@
+<h1>New item</h1>
+<div class="row">
+  <%= form_for(@item) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :description %>
+      <%= f.email_field :description, class: 'form-control' %>
+
+      <%= f.label :price %>
+      <%= f.password_field :price, class: 'form-control' %>
+
+      <%= f.label :active %>
+      <%= f.select :active, [['True', 'true'],['False', 'false']] %>
+
+      <%= f.submit "Add new item", class: "btn btn-primary" %>
+    <% end %>
+</div>

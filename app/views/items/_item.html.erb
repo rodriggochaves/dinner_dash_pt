@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to item.name, item %></td>
+  <td><%= item.price %></td>
+  <td><%=button_to "Add", add_item_path, params: { item_id: item.id } %></td>
+</tr>

@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-brand second-navbar">
-  <div class="container-fluid">
-    Carrinho de compras
-  </div>
+<div class="container-fluid">
+  Carrinho de compras
+</div>
 </nav>
 <div class="cart-table">
-  <% if @my_cart.empty? %>
+  <% if @items.empty? %>
     <div class="alert alert-info">
       Seu carrinho esta vazio!
     </div>
@@ -14,12 +14,15 @@
         <th>Item</th>
         <th>Price</th>
         <th>Quantity</th>
-          <% @my_cart.each do |item| %>
-            <tr>
-              <td><%= item.name %></td>
-              <td><%= item.price %></td>
-            </tr>
-          <% end %>
+      </thead>
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+            <td><%= link_to item.name, item %></td>
+            <td><%= item.price %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   <% end %>
 </div>

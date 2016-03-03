@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CategoryItemTest < ActiveSupport::TestCase
   test "m2m relationship works" do
-    item1 = Item.create(name: "item1")
+    item1 = Item.create(name: "item1", description: "foobar")
     assert item1
     categ1 = Category.create(name: "categ1")
     assert categ1

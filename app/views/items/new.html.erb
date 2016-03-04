@@ -5,13 +5,18 @@
       <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :description %>
-      <%= f.email_field :description, class: 'form-control' %>
+      <%= f.text_field :description, class: 'form-control' %>
 
       <%= f.label :price %>
-      <%= f.password_field :price, class: 'form-control' %>
+      <%= f.number_field :price, class: 'form-control' %>
 
       <%= f.label :active %>
-      <%= f.select :active, [['True', 'true'],['False', 'false']] %>
+      <%= f.select(:active, [['True', 'true'],['False', 'false']], {}, 
+                   { class: 'form-dropdown' })%>
+
+      <%= f.label :category %>
+      <%= f.select(:categories, @categories.map {|c| c.name}, {}, 
+                   { :class => 'form-dropdown' })%>
 
       <%= f.submit "Add new item", class: "btn btn-primary" %>
     <% end %>

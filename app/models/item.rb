@@ -5,4 +5,6 @@ class Item < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true, length: { maximum: 255 }
+  validates :price, presence: true
+  validates :active, inclusion: [true, false]
 end

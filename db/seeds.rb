@@ -23,3 +23,8 @@ User.create!(name:      "Jorge Tellez",
                price: price,
                active: active)
 end
+
+5.times do |n|
+  category_name = Faker::Commerce.department(1)
+  Category.create!(name: category_name)
+end

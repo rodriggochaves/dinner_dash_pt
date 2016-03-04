@@ -15,7 +15,7 @@
                    { class: 'form-dropdown' })%>
 
       <%= f.label :category %>
-      <%= f.select(:categories, @categories.map {|c| c.name}, {}, 
+      <%= f.select(:categories, all_categories.map {|c| [c.name, c.id]}, {}, 
                    { :class => 'form-dropdown' })%>
 
       <%= f.submit "Add new item", class: "btn btn-primary" %>

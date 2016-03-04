@@ -1,11 +1,14 @@
 <div class="col-sm-2">
-  <div class="sidebar-nav">
-    <div class="navbar navbar-default" role="navigation">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Products", items_index_path %></li>
-          <li><a href="#">Menu Item 2</a></li>
-          <li><a href="#">Menu Item 4</a></li>
-        </ul>
-    </div>
+<div class="sidebar-nav">
+  <div class="navbar navbar-default" role="navigation">
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Products", items_index_path %></li>
+      <%= form_tag("/items", method: "get") do %>
+        <%= select_options_tag(:categories, all_categories.map {|c| [c.name, c.id]},
+                               { class: 'form-dropdown item-category', 
+                                 onchange: "this.form.submit()" })%>
+     <% end %>
+    </ul>
   </div>
+</div>
 </div>

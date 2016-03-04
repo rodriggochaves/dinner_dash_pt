@@ -4,13 +4,18 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    if category_id = params[:categories]
+      category = Category.find(category_id)
+      @items = category.items
+    else
+      @items = Item.all
+    end
   end
 
   def create
     @item = Item.create(item_params)
     if @item.save
-      @item.category_item.create(params[:categories])
+      @item.category_item.create(category_id: params[:item][:categories])
       flash[:success] = "Item registered with success!"
       redirect_to new_item_path
     else
@@ -21,7 +26,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @categories = Category.all
   end
 
   private

@@ -4,7 +4,6 @@
   <nav>
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to "Home",   root_path %></li>
-      <li><%= link_to "Sign up",   signup_path %></li>
       <% if !logged_in? %>
         <li><%= link_to "Log in",   login_path %></li>
       <% elsif logged_in? %>
@@ -13,7 +12,7 @@
       <li>
         <%= link_to my_cart_path do %>
           My cart
-          <span class="badge">50</span>
+          <span class="badge"><%= current_order.length %></span>
         <% end %>
       </li>
     </ul>

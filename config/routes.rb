@@ -6,6 +6,7 @@
 
   get 'signup'                =>  'users#new'
   get 'my_cart'               =>  'carts#show'
+  post 'remove_item'          =>  'carts#remove'
   
   post 'add_item'             =>  'orders#add'
 

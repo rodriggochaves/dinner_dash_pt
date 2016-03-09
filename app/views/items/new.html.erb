@@ -1,0 +1,23 @@
+<h1>New item</h1>
+<div class="row">
+  <%= form_for(@item) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+
+      <%= f.label :price %>
+      <%= f.number_field :price, class: 'form-control' %>
+
+      <%= f.label :active %>
+      <%= f.select(:active, [['True', 'true'],['False', 'false']], {}, 
+                   { class: 'form-dropdown' })%>
+
+      <%= f.label :category %>
+      <%= f.select(:categories, all_categories.map {|c| [c.name, c.id]}, {}, 
+                   { :class => 'form-dropdown' })%>
+
+      <%= f.submit "Add new item", class: "btn btn-primary" %>
+    <% end %>
+</div>

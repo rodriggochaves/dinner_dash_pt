@@ -1,8 +1,14 @@
 require 'test_helper'
 
 class CategoryItemTest < ActiveSupport::TestCase
+  def setup
+    @item = Item.create(name: "My Item",
+                   description: "My description",
+                   price: 123.45,
+                   active: true)
+  end
   test "m2m relationship works" do
-    item1 = Item.create(name: "item1")
+    item1 = @item
     assert item1
     categ1 = Category.create(name: "categ1")
     assert categ1
